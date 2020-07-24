@@ -21,14 +21,15 @@ namespace MIA3TOOLKIT
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
             menuStrip1.Cursor = Cursors.Hand;
-            mIFLASHToolStripMenuItem.BackColor = menuStrip1.BackColor = Color.FromArgb(38, 38, 38);
-            mIFLASHToolStripMenuItem.ForeColor = groupBoxReboot.ForeColor = groupBoxTWRPBOOT.ForeColor = groupBoxSlot.ForeColor = groupBoxBootloader.ForeColor = Color.FromArgb(250, 232, 232);
+            aboutToolStripMenuItem.BackColor = mIFLASHToolStripMenuItem.BackColor = menuStrip1.BackColor = Color.FromArgb(38, 38, 38);
+            aboutToolStripMenuItem.ForeColor = mIFLASHToolStripMenuItem.ForeColor = groupBoxReboot.ForeColor = groupBoxTWRPBOOT.ForeColor = groupBoxSlot.ForeColor = groupBoxBootloader.ForeColor = Color.FromArgb(250, 232, 232);
             groupBoxSlot.Hide();
             groupBoxBootloader.Hide();
             groupBoxReboot.Hide();
             groupBoxTWRPBOOT.Hide();
+            mIFLASHToolStripMenuItem.Enabled = false;
+            aboutToolStripMenuItem.Enabled = false;
         }
-
 
         private class MyRenderer : ToolStripProfessionalRenderer
         {
@@ -80,11 +81,11 @@ namespace MIA3TOOLKIT
         {
             await Task.Run(() =>
             {
-                cAppend("Loading adb services...");
+                cAppend("Loading adb services and Tool...");
                 android = AndroidController.Instance;
-                cAppend("Loading adb services... {OK}");
+                cAppend("Loading adb services and Tool... {OK}");
                 Thread.Sleep(1000);
-                cAppend("------------------------------------------------");
+                cAppend("---------------------------------------------------------");
                 cAppend("Welcome to Xiaomi MI A3 ToolKit!");
             });
             Thread.Sleep(500);
@@ -95,6 +96,9 @@ namespace MIA3TOOLKIT
             groupBoxTWRPBOOT.Show();
             Thread.Sleep(500);
             groupBoxReboot.Show();
+            mIFLASHToolStripMenuItem.Enabled = true;
+            aboutToolStripMenuItem.Enabled = true;
+            Thread.Sleep(500);
         }
 
         private void buttonUnlockBootloader_Click(object sender, EventArgs e)
@@ -108,7 +112,7 @@ namespace MIA3TOOLKIT
             }
             else
             {
-                cAppend("Please connect your device...");
+                cAppend("{UnlockBootloader} Please connect your device...");
                 return;
             }
         }
@@ -124,7 +128,7 @@ namespace MIA3TOOLKIT
             }
             else
             {
-                cAppend("Please connect your device...");
+                cAppend("{UnlockCriticalBootloader} Please connect your device...");
                 return;
             }
         }
@@ -140,7 +144,7 @@ namespace MIA3TOOLKIT
             }
             else
             {
-                cAppend("Please connect your device...");
+                cAppend("{LockBootloader} Please connect your device...");
                 return;
             }
         }
@@ -164,7 +168,7 @@ namespace MIA3TOOLKIT
             }
             else
             {
-                cAppend("Please connect your device...");
+                cAppend("{ChangeSlot} Please connect your device...");
                 return;
             }
         }
@@ -185,7 +189,7 @@ namespace MIA3TOOLKIT
             }
             else
             {
-                cAppend("Please connect your device...");
+                cAppend("{BootTWRP} Please connect your device...");
                 return;
             }
         }
@@ -215,7 +219,7 @@ namespace MIA3TOOLKIT
             }
             else
             {
-                cAppend("Please connect your device...");
+                cAppend("{RebootBootloader} Please connect your device...");
                 return;
             }
         }
@@ -230,9 +234,19 @@ namespace MIA3TOOLKIT
             }
             else
             {
-                cAppend("Please connect your device...");
+                cAppend("{RebootRecovery} Please connect your device...");
                 return;
             }
+        }
+
+        private void mIFLASHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

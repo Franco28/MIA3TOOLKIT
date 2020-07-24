@@ -47,7 +47,7 @@
             this.buttonRebootBootloader = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mIFLASHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxSlot.SuspendLayout();
             this.groupBoxBootloader.SuspendLayout();
             this.groupBoxTWRPBOOT.SuspendLayout();
@@ -65,7 +65,7 @@
             this.console.Location = new System.Drawing.Point(0, 24);
             this.console.Name = "console";
             this.console.ReadOnly = true;
-            this.console.Size = new System.Drawing.Size(486, 164);
+            this.console.Size = new System.Drawing.Size(750, 164);
             this.console.TabIndex = 2;
             this.console.Text = "";
             this.console.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.console_MouseDoubleClick);
@@ -79,7 +79,7 @@
             this.groupBoxSlot.Controls.Add(this.radioButtonSlotA);
             this.groupBoxSlot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBoxSlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSlot.Location = new System.Drawing.Point(12, 185);
+            this.groupBoxSlot.Location = new System.Drawing.Point(12, 194);
             this.groupBoxSlot.Name = "groupBoxSlot";
             this.groupBoxSlot.Size = new System.Drawing.Size(156, 95);
             this.groupBoxSlot.TabIndex = 7;
@@ -142,7 +142,7 @@
             this.groupBoxBootloader.Controls.Add(this.buttonUnlockBootloader);
             this.groupBoxBootloader.Controls.Add(this.buttonLockBootloader);
             this.groupBoxBootloader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxBootloader.Location = new System.Drawing.Point(178, 235);
+            this.groupBoxBootloader.Location = new System.Drawing.Point(174, 244);
             this.groupBoxBootloader.Name = "groupBoxBootloader";
             this.groupBoxBootloader.Size = new System.Drawing.Size(296, 45);
             this.groupBoxBootloader.TabIndex = 8;
@@ -190,7 +190,7 @@
             this.groupBoxTWRPBOOT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBoxTWRPBOOT.Controls.Add(this.buttonBOOTTWRP);
             this.groupBoxTWRPBOOT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxTWRPBOOT.Location = new System.Drawing.Point(178, 185);
+            this.groupBoxTWRPBOOT.Location = new System.Drawing.Point(361, 194);
             this.groupBoxTWRPBOOT.Name = "groupBoxTWRPBOOT";
             this.groupBoxTWRPBOOT.Size = new System.Drawing.Size(109, 44);
             this.groupBoxTWRPBOOT.TabIndex = 9;
@@ -219,7 +219,7 @@
             this.groupBoxReboot.Controls.Add(this.buttonRebootRecovery);
             this.groupBoxReboot.Controls.Add(this.buttonRebootBootloader);
             this.groupBoxReboot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxReboot.Location = new System.Drawing.Point(293, 185);
+            this.groupBoxReboot.Location = new System.Drawing.Point(174, 194);
             this.groupBoxReboot.Name = "groupBoxReboot";
             this.groupBoxReboot.Size = new System.Drawing.Size(181, 44);
             this.groupBoxReboot.TabIndex = 10;
@@ -254,37 +254,40 @@
             // 
             this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mIFLASHToolStripMenuItem});
+            this.mIFLASHToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(486, 24);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(750, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mIFLASHToolStripMenuItem
             // 
             this.mIFLASHToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mIFLASHToolStripMenuItem.BackgroundImage")));
-            this.mIFLASHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testToolStripMenuItem});
             this.mIFLASHToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.mIFLASHToolStripMenuItem.Name = "mIFLASHToolStripMenuItem";
             this.mIFLASHToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.mIFLASHToolStripMenuItem.Text = "MI FLASH";
+            this.mIFLASHToolStripMenuItem.Click += new System.EventHandler(this.mIFLASHToolStripMenuItem_Click);
             // 
-            // testToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            this.testToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("testToolStripMenuItem.BackgroundImage")));
-            this.testToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("testToolStripMenuItem.Image")));
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.testToolStripMenuItem.Text = "Test";
+            this.aboutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.aboutToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.BackgroundImage")));
+            this.aboutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(486, 290);
+            this.ClientSize = new System.Drawing.Size(750, 410);
             this.Controls.Add(this.groupBoxReboot);
             this.Controls.Add(this.groupBoxTWRPBOOT);
             this.Controls.Add(this.groupBoxSlot);
@@ -332,7 +335,7 @@
         private System.Windows.Forms.Button buttonRebootRecovery;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mIFLASHToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
