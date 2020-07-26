@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MIA3TOOLKIT.exe" size="49664">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MIA3TOOLKIT.exe" size="51712">
       <assemblyIdentity name="MIA3TOOLKIT" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NA0bRtvoy2eRJ3j/kM2QQex7V06C4UxkCHGctc40CBA=</dsig:DigestValue>
+        <dsig:DigestValue>Iw92UbT5fpAAxvlQ8l0AeBy1yGeQRvi0JagqtmKa308=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

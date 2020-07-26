@@ -252,7 +252,8 @@ namespace MIA3TOOLKIT
 
         private void mIFLASHToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var miflash = new MIFlash();
+            miflash.Show();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)

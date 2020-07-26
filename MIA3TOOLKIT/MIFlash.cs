@@ -1,6 +1,7 @@
 ﻿
 using RegawMOD.Android;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MIA3TOOLKIT
@@ -13,6 +14,8 @@ namespace MIA3TOOLKIT
         public MIFlash()
         {
             InitializeComponent();
+            groupBoxReboot.Hide();
+            buttonRebootBootloader.Hide();        
         }
 
         public void cAppend(string message)
@@ -34,15 +37,36 @@ namespace MIA3TOOLKIT
                 device = android.GetConnectedDevice(serial);
                 i = true;
                 cAppend("Device: " + serial.ToString());
+                labelDeviceStatus.Text = "Device Status: Online";
             }
             else
                 i = false;
+            labelDeviceStatus.Text = "Device Status: Offline";
             return i;
         }
 
-        private void MIFlash_Load(object sender, EventArgs e)
+        private async void MIFlash_Load(object sender, EventArgs e)
         {
+            await Task.Run(() =>
+            {
+                cAppend("Checking device connection...");
+                android = AndroidController.Instance;
+            });
+            groupBoxReboot.Show();
+            buttonRebootBootloader.Show();
+            if (isConnected())
+            {
+                cAppend("Checking device connection... {online}");
+            }
+            else
+            {
+                cAppend("Checking device connection... {offline}");
+            }
+        }
 
+        private void MIFlash_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
