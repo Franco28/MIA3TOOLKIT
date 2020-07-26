@@ -48,6 +48,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mIFLASHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelDeviceStatus = new System.Windows.Forms.Label();
             this.groupBoxSlot.SuspendLayout();
             this.groupBoxBootloader.SuspendLayout();
             this.groupBoxTWRPBOOT.SuspendLayout();
@@ -65,7 +66,7 @@
             this.console.Location = new System.Drawing.Point(0, 24);
             this.console.Name = "console";
             this.console.ReadOnly = true;
-            this.console.Size = new System.Drawing.Size(750, 164);
+            this.console.Size = new System.Drawing.Size(624, 193);
             this.console.TabIndex = 2;
             this.console.Text = "";
             this.console.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.console_MouseDoubleClick);
@@ -79,7 +80,7 @@
             this.groupBoxSlot.Controls.Add(this.radioButtonSlotA);
             this.groupBoxSlot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBoxSlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSlot.Location = new System.Drawing.Point(12, 194);
+            this.groupBoxSlot.Location = new System.Drawing.Point(12, 238);
             this.groupBoxSlot.Name = "groupBoxSlot";
             this.groupBoxSlot.Size = new System.Drawing.Size(156, 95);
             this.groupBoxSlot.TabIndex = 7;
@@ -142,7 +143,7 @@
             this.groupBoxBootloader.Controls.Add(this.buttonUnlockBootloader);
             this.groupBoxBootloader.Controls.Add(this.buttonLockBootloader);
             this.groupBoxBootloader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxBootloader.Location = new System.Drawing.Point(174, 244);
+            this.groupBoxBootloader.Location = new System.Drawing.Point(174, 288);
             this.groupBoxBootloader.Name = "groupBoxBootloader";
             this.groupBoxBootloader.Size = new System.Drawing.Size(296, 45);
             this.groupBoxBootloader.TabIndex = 8;
@@ -153,9 +154,9 @@
             // 
             this.buttonUnlockCritical.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUnlockCritical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUnlockCritical.Location = new System.Drawing.Point(72, 15);
+            this.buttonUnlockCritical.Location = new System.Drawing.Point(106, 15);
             this.buttonUnlockCritical.Name = "buttonUnlockCritical";
-            this.buttonUnlockCritical.Size = new System.Drawing.Size(112, 23);
+            this.buttonUnlockCritical.Size = new System.Drawing.Size(92, 23);
             this.buttonUnlockCritical.TabIndex = 6;
             this.buttonUnlockCritical.Text = "Unlock Critical";
             this.buttonUnlockCritical.UseVisualStyleBackColor = true;
@@ -167,7 +168,7 @@
             this.buttonUnlockBootloader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUnlockBootloader.Location = new System.Drawing.Point(6, 15);
             this.buttonUnlockBootloader.Name = "buttonUnlockBootloader";
-            this.buttonUnlockBootloader.Size = new System.Drawing.Size(60, 23);
+            this.buttonUnlockBootloader.Size = new System.Drawing.Size(94, 23);
             this.buttonUnlockBootloader.TabIndex = 4;
             this.buttonUnlockBootloader.Text = "Unlock";
             this.buttonUnlockBootloader.UseVisualStyleBackColor = true;
@@ -177,9 +178,9 @@
             // 
             this.buttonLockBootloader.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLockBootloader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLockBootloader.Location = new System.Drawing.Point(190, 15);
+            this.buttonLockBootloader.Location = new System.Drawing.Point(204, 15);
             this.buttonLockBootloader.Name = "buttonLockBootloader";
-            this.buttonLockBootloader.Size = new System.Drawing.Size(100, 23);
+            this.buttonLockBootloader.Size = new System.Drawing.Size(86, 23);
             this.buttonLockBootloader.TabIndex = 5;
             this.buttonLockBootloader.Text = "Lock";
             this.buttonLockBootloader.UseVisualStyleBackColor = true;
@@ -190,7 +191,7 @@
             this.groupBoxTWRPBOOT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBoxTWRPBOOT.Controls.Add(this.buttonBOOTTWRP);
             this.groupBoxTWRPBOOT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxTWRPBOOT.Location = new System.Drawing.Point(361, 194);
+            this.groupBoxTWRPBOOT.Location = new System.Drawing.Point(361, 238);
             this.groupBoxTWRPBOOT.Name = "groupBoxTWRPBOOT";
             this.groupBoxTWRPBOOT.Size = new System.Drawing.Size(109, 44);
             this.groupBoxTWRPBOOT.TabIndex = 9;
@@ -203,7 +204,7 @@
             this.buttonBOOTTWRP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBOOTTWRP.Location = new System.Drawing.Point(6, 15);
             this.buttonBOOTTWRP.Name = "buttonBOOTTWRP";
-            this.buttonBOOTTWRP.Size = new System.Drawing.Size(94, 23);
+            this.buttonBOOTTWRP.Size = new System.Drawing.Size(97, 23);
             this.buttonBOOTTWRP.TabIndex = 4;
             this.buttonBOOTTWRP.Text = "Boot";
             this.buttonBOOTTWRP.UseVisualStyleBackColor = true;
@@ -219,7 +220,7 @@
             this.groupBoxReboot.Controls.Add(this.buttonRebootRecovery);
             this.groupBoxReboot.Controls.Add(this.buttonRebootBootloader);
             this.groupBoxReboot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxReboot.Location = new System.Drawing.Point(174, 194);
+            this.groupBoxReboot.Location = new System.Drawing.Point(174, 238);
             this.groupBoxReboot.Name = "groupBoxReboot";
             this.groupBoxReboot.Size = new System.Drawing.Size(181, 44);
             this.groupBoxReboot.TabIndex = 10;
@@ -230,9 +231,9 @@
             // 
             this.buttonRebootRecovery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRebootRecovery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRebootRecovery.Location = new System.Drawing.Point(106, 14);
+            this.buttonRebootRecovery.Location = new System.Drawing.Point(95, 15);
             this.buttonRebootRecovery.Name = "buttonRebootRecovery";
-            this.buttonRebootRecovery.Size = new System.Drawing.Size(69, 23);
+            this.buttonRebootRecovery.Size = new System.Drawing.Size(80, 23);
             this.buttonRebootRecovery.TabIndex = 5;
             this.buttonRebootRecovery.Text = "Recovery";
             this.buttonRebootRecovery.UseVisualStyleBackColor = true;
@@ -244,7 +245,7 @@
             this.buttonRebootBootloader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRebootBootloader.Location = new System.Drawing.Point(6, 15);
             this.buttonRebootBootloader.Name = "buttonRebootBootloader";
-            this.buttonRebootBootloader.Size = new System.Drawing.Size(69, 23);
+            this.buttonRebootBootloader.Size = new System.Drawing.Size(83, 23);
             this.buttonRebootBootloader.TabIndex = 4;
             this.buttonRebootBootloader.Text = "Bootloader";
             this.buttonRebootBootloader.UseVisualStyleBackColor = true;
@@ -259,7 +260,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(750, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(624, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -282,12 +283,26 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // labelDeviceStatus
+            // 
+            this.labelDeviceStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDeviceStatus.AutoSize = true;
+            this.labelDeviceStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeviceStatus.Location = new System.Drawing.Point(476, 238);
+            this.labelDeviceStatus.Name = "labelDeviceStatus";
+            this.labelDeviceStatus.Size = new System.Drawing.Size(109, 16);
+            this.labelDeviceStatus.TabIndex = 12;
+            this.labelDeviceStatus.Text = "Device Status: ---";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(750, 410);
+            this.ClientSize = new System.Drawing.Size(624, 345);
+            this.Controls.Add(this.labelDeviceStatus);
             this.Controls.Add(this.groupBoxReboot);
             this.Controls.Add(this.groupBoxTWRPBOOT);
             this.Controls.Add(this.groupBoxSlot);
@@ -336,6 +351,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mIFLASHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Label labelDeviceStatus;
     }
 }
 

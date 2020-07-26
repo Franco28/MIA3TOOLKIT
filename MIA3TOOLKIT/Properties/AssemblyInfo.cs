@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("MIA3TOOLKIT")]
+[assembly: AssemblyTitle("MI A3 TOOLKIT")]
 [assembly: AssemblyDescription("A .NET Tool for Xiaomi MI A3")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Franco28")]

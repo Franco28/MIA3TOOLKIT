@@ -21,8 +21,8 @@ namespace MIA3TOOLKIT
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
             menuStrip1.Cursor = Cursors.Hand;
-            aboutToolStripMenuItem.BackColor = mIFLASHToolStripMenuItem.BackColor = menuStrip1.BackColor = Color.FromArgb(38, 38, 38);
-            aboutToolStripMenuItem.ForeColor = mIFLASHToolStripMenuItem.ForeColor = groupBoxReboot.ForeColor = groupBoxTWRPBOOT.ForeColor = groupBoxSlot.ForeColor = groupBoxBootloader.ForeColor = Color.FromArgb(250, 232, 232);
+            labelDeviceStatus.BackColor = aboutToolStripMenuItem.BackColor = mIFLASHToolStripMenuItem.BackColor = menuStrip1.BackColor = Color.FromArgb(38, 38, 38);
+            labelDeviceStatus.ForeColor = aboutToolStripMenuItem.ForeColor = mIFLASHToolStripMenuItem.ForeColor = groupBoxReboot.ForeColor = groupBoxTWRPBOOT.ForeColor = groupBoxSlot.ForeColor = groupBoxBootloader.ForeColor = Color.FromArgb(250, 232, 232);
             groupBoxSlot.Hide();
             groupBoxBootloader.Hide();
             groupBoxReboot.Hide();
@@ -71,9 +71,11 @@ namespace MIA3TOOLKIT
                 device = android.GetConnectedDevice(serial);
                 i = true;
                 cAppend("Device: " + serial.ToString());
+                labelDeviceStatus.Text = "Device Status: Online";
             }
             else
                 i = false;
+            labelDeviceStatus.Text = "Device Status: Offline";
             return i;
         }
 
@@ -85,8 +87,6 @@ namespace MIA3TOOLKIT
                 android = AndroidController.Instance;
                 cAppend("Loading adb services and Tool... {OK}");
                 Thread.Sleep(1000);
-                cAppend("---------------------------------------------------------");
-                cAppend("Welcome to Xiaomi MI A3 ToolKit!");
             });
             Thread.Sleep(500);
             groupBoxSlot.Show();
@@ -99,6 +99,17 @@ namespace MIA3TOOLKIT
             mIFLASHToolStripMenuItem.Enabled = true;
             aboutToolStripMenuItem.Enabled = true;
             Thread.Sleep(500);
+            cAppend("Checking device connection...");
+            if (isConnected())
+            {
+                cAppend("Checking device connection... {online}");
+            }
+            else
+            {
+                cAppend("Checking device connection... {offline}");
+            }
+            cAppend("---------------------------------------------------------");
+            cAppend("Welcome to Xiaomi MI A3 ToolKit!");
         }
 
         private void buttonUnlockBootloader_Click(object sender, EventArgs e)
@@ -246,7 +257,8 @@ namespace MIA3TOOLKIT
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var about = new About();
+            about.Show();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
